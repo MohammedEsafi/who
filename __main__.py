@@ -4,12 +4,12 @@ import subprocess
 
 
 def printer(who):
-	print('+ {} + {} + {} + {} +'.format('-' * 5, '-' * 25, '-' * 20, '-' * 17))
+	print('+{}+{}+{}+{}+'.format('-' * 7, '-' * 27, '-' * 22, '-' * 19))
 	print('| {:5} + {:25} + {:20} + {:17} |'.format('No.', 'Devices', 'MAC Address', 'IP Address'))
-	print('+ {} + {} + {} + {} +'.format('-' * 5, '-' * 25, '-' * 20, '-' * 17))
+	print('+{}+{}+{}+{}+'.format('-' * 7, '-' * 27, '-' * 22, '-' * 19))
 	for index, device in enumerate(who):
 		print('| {:5} + {:25} + {:20} + {:17} |'.format(str(index), device['Device'], device['MAC Address'], device['IP Address']))
-		print('+ {} + {} + {} + {} +'.format('-' * 5, '-' * 25, '-' * 20, '-' * 17))
+		print('+{}+{}+{}+{}+'.format('-' * 7, '-' * 27, '-' * 22, '-' * 19))
 
 
 def what_is_my_ip():
