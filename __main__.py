@@ -12,20 +12,9 @@ def printer(who):
 		print('+{}+{}+{}+{}+'.format('-' * 7, '-' * 27, '-' * 22, '-' * 19))
 
 
-def what_is_my_ip():
-	""" get the IP address of the host. """
-	IP = subprocess.Popen("hostname -I", shell=True, stdout=subprocess.PIPE)
-	IP = IP.stdout.readline()
-	IP = IP.decode("utf-8").split()[0]
-
-	return IP
-
-
 def who():
 	nm = nmap.PortScanner()
-	IP = what_is_my_ip()
-	host = IP + '/24'
-	dictList = nm.scan(hosts=host, arguments='-sn')
+	dictList = nm.scan(hosts='192.168.1.1-255', arguments='-n -sP')
 	scan = dictList.get("scan")
 
 	WhoList = []
